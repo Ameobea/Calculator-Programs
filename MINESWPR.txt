@@ -1,0 +1,270 @@
+ClrHome
+Disp "MINESWEEPER
+Disp "CASEY PRIMOZIC
+Disp "PRESS ENTER
+Pause 
+16->J
+10->H
+0->W
+ClrDraw
+ClrHome
+Input "HOW MANY MINES: ",V
+If V>158
+158->V
+ClrHome
+Disp "LOADING...
+HJ->dim(L1
+Fill(0,L1
+For(I,1,V
+  randInt(3,159->A
+  If L1(A)!=9
+  Then
+    9->L1(A
+    Else
+    I-1->I
+  End
+End
+For(A,1,HJ
+  If L1(A)=9
+  Then
+    If A!=J and A!=2J and A!=3J and A!=4J and A!=5J and A!=6J and A!=7J and A!=8J and A!=9J and A!=HJ
+    Then
+      A+1->theta
+      If L1(theta)!=9
+      L1(theta)+1->L1(theta
+    End
+    If A!=1 and A!=17 and A!=33 and A!=49 and A!=65 and A!=81 and A!=97 and A!=113 and A!=129 and A!=145
+    Then
+      If L1(A-1)!=9
+      L1(A-1)+1->L1(A-1
+    End
+    If A<=9J
+    Then
+      If L1(A+J)!=9
+      L1(A+J)+1->L1(A+J
+    End
+    If A>J
+    Then
+      If L1(A-J)!=9
+      L1(A-J)+1->L1(A-J
+    End
+    A/J->G
+    If A/J!=1 and A/J!=2 and A/J!=3 and A/J!=4 and A/J!=5 and A/J!=6 and A/J!=6 and A/J!=7 and A/J!=8 and A/J!=9 and A/J!=10 and A>15
+    Then
+      If L1(A-15)!=9
+      L1(A-15)+1->L1(A-15
+    End
+    If A!=1 and A!=17 and A!=33 and A!=49 and A!=65 and A!=81 and A!=97 and A!=113 and A!=129
+    Then
+      If A<145
+      Then
+        If L1(A+15)!=9
+        L1(A+15)+1->L1(A+15
+      End
+      If A>17
+      Then
+        If L1(A-17)!=9
+        L1(A-17)+1->L1(A-17
+      End
+    End
+    If A!=J and A!=2J and A!=3J and A!=4J and A!=5J and A!=6J and A!=7J and A!=8J and A!=9J and A!=10J and A<=144
+    Then
+      If L1(A+17)!=9
+      L1(A+17)+1->L1(A+17
+    End
+  End
+End
+0->A
+AxesOff
+ClrDraw
+FnOff 
+For(I,0,9
+  For(T,1,J
+    JI+T->E
+    Text(I6,T5,"?
+  End
+End
+DispGraph
+Pxl-On(0,4
+Pxl-On(0,8
+Pxl-On(6,8
+8->dim(L3
+Pxl-On(6,4
+{0,4,0,8,6,8,6,4->L3
+0->Y
+startTmr->G
+Repeat Y=1
+  checkTmr(G->Z
+  Text(10,85,Z
+  getKey->K
+  If K
+  Then
+    If K=23
+    prgmTTTCLEAN
+    If K=34
+    Then
+      If L3(1)<54
+      Then
+        Pxl-Off(L3(1),L3(2
+        Pxl-Off(L3(3),L3(4
+        Pxl-Off(L3(5),L3(6
+        Pxl-Off(L3(7),L3(8
+        L3(1)+6->L3(1
+        L3(3)+6->L3(3
+        L3(5)+6->L3(5
+        L3(7)+6->L3(7
+        Pxl-On(L3(1),L3(2
+        Pxl-On(L3(3),L3(4
+        Pxl-On(L3(5),L3(6
+        Pxl-On(L3(7),L3(8
+      End
+    End
+    If K=25
+    Then
+      If L3(1)>0
+      Then
+        Pxl-Off(L3(1),L3(2
+        Pxl-Off(L3(3),L3(4
+        Pxl-Off(L3(5),L3(6
+        Pxl-Off(L3(7),L3(8
+        L3(1)-6->L3(1
+        L3(3)-6->L3(3
+        L3(5)-6->L3(5
+        L3(7)-6->L3(7
+        Pxl-On(L3(1),L3(2
+        Pxl-On(L3(3),L3(4
+        Pxl-On(L3(5),L3(6
+        Pxl-On(L3(7),L3(8
+      End
+    End
+    If K=24
+    Then
+      If L3(4)>8
+      Then
+        Pxl-Off(L3(1),L3(2
+        Pxl-Off(L3(3),L3(4
+        Pxl-Off(L3(5),L3(6
+        Pxl-Off(L3(7),L3(8
+        L3(2)-5->L3(2
+        L3(4)-5->L3(4
+        L3(6)-5->L3(6
+        L3(8)-5->L3(8
+        Pxl-On(L3(1),L3(2
+        Pxl-On(L3(3),L3(4
+        Pxl-On(L3(5),L3(6
+        Pxl-On(L3(7),L3(8
+      End
+    End
+    If K=26
+    Then
+      If L3(4)<83
+      Then
+        Pxl-Off(L3(1),L3(2
+        Pxl-Off(L3(3),L3(4
+        Pxl-Off(L3(5),L3(6
+        Pxl-Off(L3(7),L3(8
+        L3(2)+5->L3(2
+        L3(4)+5->L3(4
+        L3(6)+5->L3(6
+        L3(8)+5->L3(8
+        Pxl-On(L3(1),L3(2
+        Pxl-On(L3(3),L3(4
+        Pxl-On(L3(5),L3(6
+        Pxl-On(L3(7),L3(8
+      End
+    End
+    If K=105
+    Then
+      ((L3(2)-4)/5)+1->A
+      1+((L3(1)/6->B
+      L1((BJ)+A-J->S
+      (BJ)+A-J->Q
+      S-(BJ->I
+      If S=0
+      Then
+        If Q>1 and Q!=17 and Q!=33 and Q!=49 and Q!=65 and Q!=81 and Q!=97 and Q!=113 and Q!=129 and Q!=145
+        Text(L3(1),L3(2)-4,L1(Q-1
+        If Q<10J and Q!=J and Q!=2J and Q!=3J and Q!=4J and Q!=5J and Q!=6J and Q!=7J and Q!=8J and Q!=9J and Q!=HJ
+        Text(L3(1),L3(2)+6,L1(Q+1
+        If Q<9J
+        Text(L3(1)+6,L3(2)+1,L1(Q+J
+        If Q>J
+        Text(L3(1)-6,L3(2)+1,L1(Q-J
+        If Q/J!=1 and Q/J!=2 and Q/J!=3 and Q/J!=4 and Q/J!=5 and Q/J!=6 and Q/J!=7 and Q/J!=8 and Q/J!=9 and Q/J!=H and Q>15
+        Text(L3(1)-6,L3(2)+6,L1(Q-15
+        If Q>17 and Q!=33 and Q!=49 and Q!=65 and Q!=81 and Q!=97 and Q!=113 and Q!=129 and Q!=145
+        Text(L3(1)-6,L3(2)-4,L1(Q-17
+        If Q<146 and Q!=1 and Q!=17 and Q!=33 and Q!=49 and Q!=65 and Q!=81 and Q!=97 and Q!=113 and Q!=129 and Q!=145
+        Text(L3(1)+6,L3(2)-4,L1(Q+15
+        If Q!=J and Q!=2J and Q!=3J and Q!=4J and Q!=5J and Q!=6J and Q!=7J and Q!=8J and Q!=9J and Q<143
+        Text(L3(1)+6,L3(2)+6,L1(Q+17
+      End
+      If S=9
+      Then
+        For(I,0,9
+          For(T,1,J
+            JI+T->E
+            L1(E->A
+            If A!=9
+            Text(I6,T5,A
+            If A=9
+            Text(I6,T5,"+
+          End
+        End
+        Pause 
+        ClrHome
+        Disp "U LOSE
+        prgmTTTCLEAN
+        Stop
+      End
+      If S!=9
+      Text(L3(1),L3(2)+1,S
+    End
+    If K=95
+    Then
+      (L3(1)/6)+1->B
+      1+((L3(2)-4)/5->A
+      L1(BJ+A-J->S
+      If S=9
+      Then
+        Text(L3(1),L3(2)+1,"+
+        W+1->W
+        If W=V
+        Then
+          For(I,0,9
+            For(T,1,J
+              JI+T->E
+              L1(E->A
+              If A!=9
+              Then
+                Text(I6,T5,A
+                Else
+                Text(I6,T5,"+
+              End
+            End
+          End
+          Pause 
+          ClrHome
+          Disp "YOU WIN
+          prgmTTTCLEAN
+          Stop
+        End
+      End
+      If S!=9
+      Then
+        ClrHome
+        For(I,0,9
+          For(T,1,J
+            JI+T->E
+            L1(E->A
+            Text(I6,T5,A
+          End
+        End
+        Pause 
+        prgmTTTCLEAN
+        Disp "YOU LOSE
+        Stop
+      End
+    End
+  End
+End

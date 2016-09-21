@@ -1,0 +1,8 @@
+AxesOn
+ZStandard
+Clear Entries
+Archive |LHS
+ClrAllLists
+UnArchive |LHS
+ClrDraw
+ClrHome

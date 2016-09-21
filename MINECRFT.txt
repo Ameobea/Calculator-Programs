@@ -1,0 +1,161 @@
+0->K
+1->L
+ClrHome
+Disp "(1-5)
+Input "STEEPNESS:",S
+Disp "(1-100)
+Input "VOLATILITY:",T
+Disp "(10-60)
+Input "HEIGHT:",Q
+Disp "(1-INFINITY"
+Input "TREE RARITY:",U
+AxesOff
+ClrDraw
+For(I,1,92
+  randInt(1,100->A
+  If A<=T
+  randInt(~S,S)+Q->Q
+  If X=1
+  Q+2->Q
+  If Q>=59
+  58->Q
+  For(J,1,Q
+    Pxl-On(63-J,I
+  End
+  If randInt(1,U)=1
+  Then
+    63-J->W
+    Pxl-On(W,I
+    Pxl-On(W-1,I
+    Pxl-On(W-2,I
+    Pxl-On(W-3,I-1
+    Pxl-On(W-3,I+1
+    Pxl-On(W-4,I-1
+    Pxl-On(W-4,I+1
+    Pxl-On(W-4,I
+    Pxl-On(W-3,I
+  End
+End
+50->Y
+40->X
+Lbl 2
+Pxl-Change(Y,X
+0->W
+While 1
+  If Y=63
+  Goto V
+  If W=0
+  Pxl-On(Y,X
+  If W=1
+  Pxl-Off(Y,X
+  getKey->theta
+  If theta
+  Then
+    Lbl V
+    If L=1 and Y=63
+    Then
+      2->L
+      StorePic Pic2
+      If K=0
+      Goto KF
+      If K=1
+      Then
+        ClrDraw
+        RecallPic Pic3
+        1->Y
+      End
+    End
+    If L=2 and Y=0
+    Then
+      StorePic Pic3
+      ClrDraw
+      RecallPic Pic2
+      1->L
+      62->Y
+      Goto 2
+    End
+    If theta=26 and X<=96
+    X+1->X
+    If theta=25 and Y>=1
+    Y-1->Y
+    If theta=24 and X>=1
+    X-1->X
+    If theta=34 and Y<=62
+    Y+1->Y
+    If theta=105
+    (W=0)->W
+  End
+End
+Lbl KF
+0->X
+0->N
+0->O
+0->W
+2->L
+1->K
+ClrDraw
+RecallPic Pic0
+Lbl 5
+randInt(25,55->D
+D->C
+For(Z,1,94
+  Lbl 4
+  C->F
+  randInt(~2,2)+F->F
+  If F>=59 or F<4
+  Goto 4
+  F->C
+  For(theta,C-(3+randInt(0,1)),C+(3+randInt(0,1))
+    Pxl-Off(theta,Z
+  End
+End
+Lbl 1
+randInt(10,50->A
+randInt(10,80->B
+For(theta,1,50
+  Lbl 22
+  A->D
+  If N=0
+  randInt(~4,4->N
+  If N<0
+  Then
+    D-randInt(1,2->D
+    N+1->N
+  End
+  If N>0
+  Then
+    D+randInt(1,2->D
+    N-1->N
+  End
+  If D<4 or D>60
+  Goto 22
+  D->A
+  Lbl 3
+  B->E
+  If O=0
+  randInt(~4,4->O
+  If O<0
+  Then
+    E-randInt(1,2->E
+    O+1->O
+  End
+  If O>0
+  Then
+    E+randInt(1,2->E
+    O-1->O
+  End
+  If E>=90 or E<4
+  Goto 3
+  E->B
+  For(Z,~2,2
+    For(Y,~2,2
+      Pxl-Off(A+Z,B+Y
+    End
+  End
+End
+X+1->X
+If X!=4
+Goto 1
+Lbl XX
+DispGraph
+Goto 2

@@ -1,0 +1,466 @@
+1->theta
+ClrHome:Disp "MATH UTILITY BY","CASEY PRIMOZIC","VERSION 2.4.1":Pause :If theta=1:Goto ZY
+Lbl ZX
+If |LHS(|LHS(2)/4)!=thetatheta(|LHS(2)/2)(2)
+Goto ZY
+9->|LHS(2
+Menu("SUBJECT","GEOMETRY",0,"MISC.",1,"COORD. PLANE",L
+Lbl 0
+Menu("PROGRAMS","TRIANGLES",BA,"MISC.",B,"CIRCLES",E,"AREAS",W,"SYS. O EQTNS.",AF,"GEOMETRIC MEAN",BB,"SIN + COS",C1
+Lbl CF
+Input "X1:",A
+Input "Y1:",B
+Input "X2:",C
+Input "Y2:",D
+Disp (C-A),(D-B),"MAGNITUDE:",sqrt(abs(C-A)^^2+abs(D-B)^^2),"DIRECTION:",tan^-1((D-B)/(C-A))
+Pause 
+Goto CF
+Lbl C1
+Menu("LAWS OF","SINE",C2,"COSINE",C3
+Lbl C3
+ClrHome
+Menu("MODE","2 SIDES",DA,"3 SIDES",DB
+Lbl DA
+Input "1ST SIDE:",A
+Input "2ND SIDE:",B
+Input "ANGLE:",C
+A^^2+B^^2-2ABcos(C)->D
+sqrt(D)->D
+Disp D
+Stop
+Lbl DB
+Input "1ST SIDE:",A
+Input "2ND SIDE:",B
+Input "OPPOSITE SIDE:",C
+A^^2+B^^2->Z
+~2AB->Y
+C^^2-Z->Z
+Disp cos^-1(Z/Y)
+Pause 
+Goto C3
+Lbl C2
+ClrHome
+Menu("MODES","2 ANGLES",CA,"1 ANGLE",CB
+Lbl CA
+Input "ANGLE 1:",A
+Input "OPP. ANGLE:",B
+Input "SIDE:",C
+C*sin(A)->D
+D/sin(B)->D
+Disp D
+Stop
+Lbl CB
+Input "SIDE 1:",A
+Input "OPP. SIDE:",B
+Input "ANGLE:",C
+Disp sin^-1((sin(C)*A)/B
+Pause 
+Goto C2
+Lbl BB
+ClrHome
+Input "A:",A
+Input "B:",B
+A*B->C
+1->B
+C->A
+0->theta
+Lbl 20
+2->J
+While theta=0
+  If J^^2>A
+  Then
+    1->theta
+    Goto 20
+  End
+  J^^2->Q
+  If round(A/Q,0)=A/Q
+  Then
+    A/Q->A
+    BJ->B
+    2->J
+    Goto 20
+  End
+  J+1->J
+End
+Disp B,"sqrt(",A,"OR"
+Disp sqrt(C)
+Pause 
+Goto BB
+Lbl ZZ
+If theta=~1
+Then
+  8->|LHS(2
+  Goto ZX
+End
+Lbl BA
+Menu("TRIANGLES","PYTHAGOREAN",A,"AREA",V,"MISSING SIDE",AI
+Lbl AI
+ClrHome
+Input "SIDE 1:",A
+Input "SIDE 2:",B
+Disp "X<",A+B
+Disp "X>
+If A>B
+Then
+  Disp A-B
+  Else
+  Disp B-A
+End
+Pause 
+Goto AI
+Lbl A
+Menu("PROGRAMS","P. SOLVER",C,"P. CHECKER",D
+Lbl AF
+While 1
+  ClrHome
+  Disp "THE FIRST LINE:"
+  Prompt X
+  Prompt Y
+  Input "THE NUMBER: ",theta
+  X->A
+  Y->B
+  Disp "THE SECOND LINE:"
+  Prompt X
+  Prompt Y
+  Input "THE NUMBER: ",C
+  {2,3->dim([A]
+  A->[A](1,1
+  B->[A](1,2
+  theta->[A](1,3
+  Y->[A](2,2
+  X->[A](2,1
+  C->[A](2,3
+  rref([A]->[B]
+  ClrHome
+  Disp "X=",[B](1,3
+  Disp "Y=",[B](2,3
+  Disp "PRESS ENTER...
+  Pause 
+  DelVar [A]
+  DelVar [B]
+End
+Lbl C
+ClrHome
+Input "SIDE 1=",A
+Input "SIDE 2=",B
+Menu("IS ONE SIDE HYP?","YES",theta,"NO",Z
+Lbl theta
+1->C
+Goto Y
+Lbl Z
+0->C
+Lbl Y
+If C=1
+Then
+  If B>A
+  Then
+    Disp sqrt(B^^2-A^^2),"OR"
+  End
+  If A>B
+  Then
+    Disp sqrt(A^^2-B^^2),"OR"
+  End
+  Else
+  Disp sqrt(A^^2+B^^2),"OR"
+End
+If C=1
+Then
+  If A>B
+  A^^2-B^^2->A
+  If B>A
+  B^^2-A^^2->A
+  Else
+  A^^2+B^^2->A
+End
+1->B
+0->theta
+Lbl 10
+2->J
+While theta=0
+  If J^^2>A
+  Then
+    1->theta
+    Goto 10
+  End
+  J^^2->Q
+  If round(A/Q,0)=A/Q
+  Then
+    A/Q->A
+    BJ->B
+    2->J
+    Goto 10
+  End
+  J+1->J
+End
+Disp B,"sqrt(",A
+Pause 
+Goto C
+Lbl D
+ClrHome
+Input "SIDE 1=",A
+Input "SIDE 2=",B
+Input "HYPOTENUSE=",C
+If A^^2+B^^2=C^^2
+Disp "YES
+If A^^2+B^^2!=C^^2
+Disp "NO
+Pause 
+Goto D
+Lbl E
+Menu("PROGRAMS","AREA",F,"CURCUMF.",G,"ARK + SECTOR",H
+Lbl F
+Input "RADIUS=",A
+A^^2pi->A
+Disp A
+Disp "OR
+Disp A/pi
+Disp "pi
+Pause 
+Goto F
+Lbl G
+Input "RADIUS=",R
+2Rpi->B
+Disp B
+Disp "OR
+Disp B/pi
+Disp "pi
+Pause 
+Goto G
+Lbl 1
+Menu("ITEMS","FACTORIALS",I,"TIMER",AA,"RADICAL SIMP",BC
+Lbl BC
+0->A
+1->B
+ClrHome
+Input "sqrt(",A
+0->theta
+Lbl BD
+2->J
+While theta=0
+  If J^^2>A
+  Then
+    1->theta
+    Goto BD
+  End
+  J^^2->Q
+  If round(A/Q,0)=A/Q
+  Then
+    A/Q->A
+    BJ->B
+    2->J
+    Goto BD
+  End
+  J+1->J
+End
+Disp B,"sqrt(",A
+Pause 
+Goto BC
+Lbl AA
+0->G
+0->B
+ClrHome
+startTmr->A
+Repeat B=1
+  Output(1,1,"MINUTES
+  Output(2,1,"SECONDS
+  getKey->C
+  If C
+  Then
+    If C=105
+    Stop
+  End
+  D->E
+  checkTmr(A->D
+  If E!=D
+  Then
+    If D=60
+    Then
+      startTmr->A
+      0->D
+      G+1->G
+    End
+    ClrHome
+    Disp G,D
+  End
+End
+Lbl I
+Menu("ITEMS","NORM FACTORIAL",J,"ADD FACTORIAL",K
+Lbl H
+Menu("ITEMS","ARK",Q,"SECTOR",N
+Lbl Q
+Input "DEGREES:",A
+Input "CIRC:",B
+B(A/360->C
+Disp ""
+Disp C
+Disp "OR
+Disp C/pi
+Disp "pi
+Pause 
+Goto Q
+Lbl J
+Input "NUMBER TO FACTOR: ",A
+A->C
+For(B,1,A-1
+  B*A->A
+End
+Disp A
+Pause 
+Goto J
+Lbl K
+0->A
+0->B
+Prompt B
+For(A,0,B
+  B+A->B
+End
+Disp B-(A-1
+Pause 
+Goto K
+Lbl N
+Input "DEGREES=",A
+A/360->A
+Input "RADIUS=",B
+3.14*(B^^2)->B
+A*B->C
+Disp C
+Pause 
+Goto N
+Lbl M
+ClrHome
+Input "X1=",A
+Input "Y1=",C
+Input "X2=",B
+Input "Y2=",D
+sqrt((B-A)^^2+(D-C)^^2->E
+ClrHome
+Disp E
+Disp "OR
+Disp "sqrt(",E^^2
+Pause 
+Goto M
+Lbl L
+Menu("COORD. P.","DIST. FORMULA",M,"MIDPOINT",R,"SLOPE FINDER",AD
+Lbl AD
+0->W
+Lbl AE
+ClrHome
+Input "X1:",A
+Input "Y1:",B
+Input "X1:",C
+Input "Y1:",D
+D-B->E
+C-A->F
+If F<0
+Then
+  ~1E->E
+  ~1F->F
+End
+0->U
+0->V
+If E<0
+Then
+  ~1E->E
+  1->U
+End
+If F<0
+Then
+  ~1F->F
+  1->V
+End
+0->R
+1->X
+If R!=1 and round(E,0)=E and round(F,0)=F
+gcd(E,F->X
+If X!=1
+Then
+  If X!=0
+  Then
+    E/X->E
+    F/X->F
+    Else
+    1->R
+  End
+  Else
+  1->R
+End
+If U=1
+~1E->E
+If V=1
+~1F->F
+0->H
+If W=1.5
+Then
+  1.9->H
+  prgmSLPEINTP
+End
+Disp E,"----------------",F
+Pause 
+ClrHome
+Goto AE
+
+Lbl R
+Input "X1:",A
+Input "Y1:",B
+Input "X2:",C
+Input "Y2:",D
+Disp "(
+(A+C)/2->E
+(B+D)/2->F
+Disp E
+Disp ",
+Disp F
+Disp ")
+Pause 
+Goto R
+Lbl S
+Input "NUMBER OF SIDES:  ",A
+360/A->B
+Disp B,"^^o
+Pause 
+Goto S
+Lbl B
+Menu("PROGRAMS","EXT. ANGLE ^^o",S,"NUM O DIAGS",T,"VECTORS",CF
+Lbl T
+Input "NUMBER OF SIDES:  ",A
+(A(A-3))/2->B
+Disp B,"DIAGONALS
+Pause 
+Goto T
+Lbl U
+Input "LENGTH:  ",A
+Input "WIDTH:  ",B
+AB->C
+Disp C
+Pause 
+Goto U
+Lbl V
+Input "BASE:  ",A
+Input "HEIGHT:  ",B
+.5AB->C
+Disp C
+Pause 
+Goto V
+Lbl W
+Menu("AREAS","RECTANGLE",U,"TRIANGLE",V,"TRAPEZOID",CD,"RHOMBUS/KITE",CE
+Lbl CE
+Input "DIAGONALB:",A
+Input "DIAGONAL2:",B
+Disp .5AB
+Pause 
+Goto CE
+Lbl CD
+Input "HEIGHT:",A
+Input "BASE1:",B
+Input "BASE2:",C
+Disp .5A(C+B)
+Pause 
+Goto CD
+Lbl ZY
+If |LHS(2)=9
+Then
+  ~1->theta
+  Goto ZZ
+  Else
+  Disp "UNREGISTERED
+  Stop

@@ -1,0 +1,112 @@
+ClrHome
+Disp "DRAWPLUS","CASEY PRIMOZIC","PRESS ENTER..."
+Pause 
+AxesOff
+ClrDraw
+DispGraph
+0->U
+0->W
+50->X
+X->Y
+Lbl A
+While 1
+  If Q=1 and X<=93 and Y<=61
+  Then
+    Pxl-On(Y+1,X
+    Pxl-On(Y,X+1
+    Pxl-On(Y+1,X+1
+  End
+  Pxl-On(Y,X
+  If W=1
+  Then
+    Pxl-Off(Y,X
+    If Q=1 and X>0 and Y>0 and X<=93 and X<=61
+    Then
+      Pxl-Off(Y+1,X
+      Pxl-Off(Y,X+1
+      Pxl-Off(Y+1,X+1
+    End
+  End
+  getKey->theta
+  If theta=26 and X<=93
+  X+1->X
+  If theta=25 and Y>0
+  Y-1->Y
+  If theta=24 and X>0
+  X-1->X
+  If theta=34 and Y<=61
+  Y+1->Y
+  If theta=105
+  (W=0)->W
+  If theta=95
+  (Q=0)->Q
+  If theta=23
+  Stop
+  If theta=85
+  (U=1)->U
+  If theta=21
+  Then
+    Lbl 99
+    Menu("TOOLS","LOAD",3,"SAVE",4,"BACK",A,"TEXT",1,"H. LINE",5,"V. LINE",6,"MORE",9
+  End
+End
+Lbl 1
+Disp "ENTER TEXT","IN QUOTES
+Prompt Str1
+Text(Y,X,Str1
+Goto A
+Lbl 9
+Menu("TOOLS","CLEAR SCREEN",8,"FILL SCREEN",7,"INVERT ALL",10
+Lbl 3
+ClrDraw
+Menu("SAVES:","1",11,"2",22,"3",33,"BACK",99
+Lbl 11
+RecallPic Pic0
+Goto A
+Lbl 22
+RecallPic Pic9
+Goto A
+Lbl 33
+RecallPic Pic8
+Goto A
+Lbl 4
+Menu("SLOT","0",1A,"8",3A,"9",2A
+Lbl 1A
+StorePic Pic0
+Lbl 2A
+StorePic Pic9
+Lbl 3A
+StorePic Pic8
+Goto A
+Lbl 5
+For(O,0,93
+  Pxl-On(Y,O
+End
+Goto A
+Lbl 6
+For(O,0,62
+  Pxl-On(O,Y
+End
+Goto A
+Lbl 7
+For(I,0,62
+  For(J,0,93
+    Pxl-On(I,J
+  End
+End
+Goto A
+Lbl 8
+ClrDraw
+Goto A
+Lbl 10
+For(I,0,62
+  For(J,0,93
+    If pxl-Test(I,J)
+    Then
+      Pxl-Off(I,J
+      Else
+      Pxl-On(I,J
+    End
+  End
+End
+Goto A

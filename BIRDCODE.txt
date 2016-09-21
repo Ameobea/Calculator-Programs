@@ -1,0 +1,105 @@
+.BIRDY
+DiagnosticOff
+Full
+ClrDraw
+DispGraph
+95->W
+1->A
+0->Z->N->O->U->G->V
+25->Y
+Line(0,63,93,63)
+Line(0,0,93,0)
+Lbl A
+getKey->M
+If M=56
+  Goto X
+End
+If A=1
+  Goto B
+  Else
+  Goto C
+End
+Lbl D
+U+1->U
+If G=0
+  If U>92
+    1->G
+    0->U
+  End
+  Else
+  If U>=27
+    1+V->V
+    0->U
+  End
+End
+Pxl-Off(3,Y)
+Pxl-Off(4,Y)
+Pxl-Off(3,Y-1)
+Pxl-Off(4,Y-1)
+Horizontal-
+DispGraph
+If M=0
+  getKey->M
+End
+If M=56
+  Goto X
+End
+If M=9
+  ~3->O
+End
+If N
+  O+1->O
+End
+(N=0)->N
+Y+O->Y
+0->M
+If (pxl-Test(4,Y)+pxl-Test(4,Y-1))
+  Pause 5000
+  Goto X
+End
+Pxl-On(3,Y)
+Pxl-On(4,Y)
+Pxl-On(3,Y-1)
+Pxl-On(4,Y-1)
+DispGraph
+If A=0
+  Goto G
+  Else
+  Goto E
+End
+Goto A
+Lbl B
+1->I
+Lbl F
+Line(W,0,W,7)
+Line(W,57,W,55)
+Pause 150
+Goto D
+Lbl E
+I+1->I
+If I>=21
+  0->A
+  Goto A
+End
+Goto F
+Lbl C
+rand^14->D
+rand^2->E
+~(E=0)+E->E
+31+(D*E)->F
+1->I
+Lbl H
+Line(W,0,W,F-8)
+Line(W,57,W,F+8)
+Pause 150
+Goto D
+Lbl G
+I+1->I
+If I>=6
+  1->A
+  Goto A
+End
+Goto H
+Lbl X
+ClrHome
+Disp V>Dec

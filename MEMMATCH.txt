@@ -1,0 +1,147 @@
+FnOff 
+0->U
+0->W
+ClrHome
+Disp "MEMORY MATCH","BETA VERSION","CASEY PRIMOZIC","PRESS ENTER...
+Pause 
+ClrHome
+AxesOff
+ZStandard
+Disp "LOADING...
+{7,10->dim([A]
+{7,10->dim([B]
+Fill(0,[A]
+For(I,1,5
+  For(J,1,14
+    randInt(1,7->T
+    randInt(1,10->U
+    If [A](T,U)=0
+    Then
+      I->[A](T,U
+      Else
+      J-1->J
+    End
+  End
+End
+Fill(0,[B]
+For(I,~10,10,2
+  Vertical I
+End
+For(I,~10,10,3
+  Horizontal I
+End
+For(J,0,60,9
+  For(I,0,89,9
+    Text(J,I+5,"?
+  End
+End
+{0,5->L1
+{0,0->L2
+Text(0,5,"+
+Fill(0,[B]
+0->X
+While 1
+  getKey->theta
+  If theta
+  Then
+    If theta=23
+    Goto A
+    L1(1)/9->A
+    (L1(2)-5)/9->B
+    A+1->A
+    B+1->B
+    [B](A,B->Z
+    If Z=0
+    Text(L1(1),L1(2),"?
+    If Z=1
+    Text(L1(1),L1(2),[A](A,B
+    If Z=2
+    Text(L1(1),L1(2),"X
+    If theta=26
+    Then
+      If L1(2)<86
+      Then
+        L1(2)+9->L1(2
+        Text(L1(1),L1(2),"+
+      End
+    End
+    If theta=24
+    Then
+      If L1(2)>=9
+      Then
+        L1(2)-9->L1(2
+        Text(L1(1),L1(2),"+
+      End
+    End
+    If theta=34
+    Then
+      If L1(1)<54
+      Then
+        L1(1)+9->L1(1
+        Text(L1(1),L1(2),"+
+      End
+    End
+    If theta=25
+    Then
+      If L1(1)>=9
+      Then
+        L1(1)-9->L1(1
+        Text(L1(1),L1(2),"+
+      End
+    End
+    If theta=105
+    Then
+      If Z!=2
+      Then
+        L1(1)/9->A
+        (L1(2)-5)/9->B
+        A+1->A
+        B+1->B
+        [A](A,B->C
+        Text(L1(1),L1(2),C
+        1->[B](A,B
+        If X=0
+        Then
+          1->X
+          A->O
+          B->P
+          C->N
+          L1->L2
+          Else
+          U+1->U
+          If A!=O or B!=P
+          Then
+            0->X
+            If C=N
+            Then
+              2->[B](A,B
+              2->[B](O,P
+              W+1->W
+              If W=35
+              Then
+                ClrHome
+                Disp "NICE JOB
+                round(1000(U/W),0->U
+                Disp U,"POINTS","PRESS ENTER...
+                Pause 
+                Goto A
+              End
+              Text(L1(1),L1(2),"X
+              Text(L2(1),L2(2),"X
+              Else
+              For(I,1,50)
+                sin(sin(5
+              End
+              Text(L1(1),L1(2),"?
+              Text(L2(1),L2(2),"?
+              0->[B](A,B
+              0->[B](O,P
+            End
+          End
+        End
+      End
+    End
+  End
+End
+Lbl A
+prgmTTTCLEAN

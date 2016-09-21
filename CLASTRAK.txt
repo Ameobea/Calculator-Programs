@@ -1,0 +1,267 @@
+11->U
+60->S
+getDate->L5
+dayOfWk(L5(1),L5(2),L5(3->W
+If W!=5
+Then
+  {7,0,8,10,8,59,9,55,10,44,U,33,12,22,13,U,14,0,14,45->L2
+  Else
+  {7,0,7,50,8,54,9,34,10,32,U,16,12,0,12,4U,13,28,14,8->L2
+End
+ClrHome
+Disp "BELL SCHEDULE
+Disp "VERSION 1.3.5.5
+Disp "CASEY PRIMOZIC
+Disp "PRESS ENTER...
+Pause 
+ClrHome
+3->dim(L1
+3->dim(L3
+While 1
+  getKey->theta
+  If theta
+  Then
+    ClrHome
+    prgmTTTCLEAN
+    Stop
+  End
+  L1->L3
+  getTime->L1
+  If L1(3)!=L3(3
+  Then
+    L1(1->J
+    L1(2->L
+    If J<13
+    Output(8,1,J
+    If L1(1)>=13
+    Output(8,1,J-12
+    Output(8,3,":
+    Output(8,4,L
+    Output(8,6,":
+    Output(8,7,L1(3
+  End
+  If L1(2)!=L3(2
+  Then
+    ClrHome
+    If W=5
+    Then
+      If J=7
+      Then
+        If L<50
+        Then
+          0->P
+          Else
+          1->P
+        End
+      End
+      If J=8
+      Then
+        If L<54
+        Then
+          1->P
+          Else
+          2->P
+        End
+      End
+      If J=9
+      Then
+        If L<34
+        Then
+          2->P
+          Else
+          3->P
+        End
+      End
+      If J=10
+      Then
+        If L<32
+        Then
+          3->P
+          Else
+          4->P
+        End
+      End
+      If J=11
+      Then
+        If L<16
+        4->P
+        If L>16 and L<56
+        5->P
+      End
+      If J=12
+      Then
+        If L<44
+        Then
+          6->P
+          Else
+          7->P
+        End
+      End
+      If J=13
+      Then
+        If L<24
+        Then
+          7->P
+          Else
+          8->P
+        End
+      End
+      If J=14
+      8->P
+    End
+    If W!=5
+    Then
+      If J=7
+      Then
+        If L<50
+        Then
+          0->P
+          Else
+          1->P
+        End
+      End
+      If J=8
+      Then
+        If L<59
+        Then
+          1->P
+          Else
+          2->P
+        End
+      End
+      If J=9
+      Then
+        If L<55
+        Then
+          2->P
+          Else
+          3->P
+        End
+      End
+      If J=10
+      Then
+        If L<44
+        Then
+          3->P
+          Else
+          4->P
+        End
+      End
+      If J=U
+      Then
+        If L<33
+        Then
+          4->P
+          Else
+          5->P
+        End
+      End
+      If J=12
+      Then
+        If L<22
+        Then
+          5->P
+          Else
+          6->P
+        End
+      End
+      If J=13
+      Then
+        If L<11
+        Then
+          6->P
+          Else
+          7->P
+        End
+      End
+      If J=14
+      8->P
+    End
+  End
+  Output(1,1,"TIME LEFT: 
+  12->H
+  If P=0
+  Then
+    (L2(4)+L2(3)S)-(JS+L->T
+    Output(1,H,T-4
+  End
+  If P=1
+  Then
+    (L2(6)+(L2(5)S))-(JS+L->T
+    Output(1,H,T-4
+  End
+  If P=2
+  Then
+    (L2(8)+(L2(7)S))-(JS+L->T
+    Output(1,H,T
+  End
+  If P=3
+  Then
+    (L2(10)+(L2(9)S))-(JS+L->T
+    Output(1,H,T-4
+  End
+  If P=4
+  Then
+    (L2(12)+(L2(11)S))-(JS+L->T
+    Output(1,H,T-4
+  End
+  If P=5
+  Then
+    (L2(14)+(L2(13)S))-(JS+L->T
+    Output(1,H,T-4
+  End
+  If P=6
+  Then
+    ((L2(16)+(L2(15)S)))-(JS+L->T
+    Output(1,H,T-4
+  End
+  If W=5
+  Then
+    40->V
+    8->U
+    Else
+    45->V
+    V->U
+  End
+  If P=7
+  Then
+    (L2(18)+L2(17)S)-(JS+L->T
+    Output(1,H,T-4
+  End
+  100->K
+  If P=8
+  Then
+    Output(3,1,K-(round(K(T/V),0
+    (L2(20)+L2(19)S)-(JS+L->T
+    Output(1,H,T
+    Else
+    Output(3,1,K-(round(K((T-4)/V),0
+  End
+  Output(3,5,"PERCENT DONE
+  (14S+U)-(JS+L->Z
+  Z/60->Z
+  Z->T
+  round(T,0->T
+  If T<Z
+  Then
+    T->F
+    Z-T->T
+    F->Z
+    Else
+    T-1->F
+    Z-F->T
+    F->Z
+  End
+  T*60->T
+  Output(4,1,Z
+  Output(4,2,":
+  Output(4,3,T
+  Output(4,7,"UNTIL THE
+  Output(5,1,"END OF SCHOOL
+  ((J-8)S+L)/(6S+U->E
+  Output(6,1,round(EK,2
+  Output(6,7,"PERCENT OF
+  Output(7,1,"SCHOOL DAY DONE
+  Output(2,1,"PERIOD 
+  Output(2,8,P
+End

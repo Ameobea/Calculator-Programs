@@ -1,0 +1,39 @@
+ClrHome
+Disp "GUESSGAME
+Disp "CASEY PRIMOZIC
+Disp "VERSION 1.0.1.2
+Disp "PRESS ENTER...
+Pause 
+0->K
+Lbl P
+ClrHome
+Disp "GUESS A NUMBER
+Disp "BETWEEN 1
+Disp "AND 1000
+randInt(1,1000->G
+0->A
+If A!=G
+Then
+  For(I,1,10
+    Input "GUESS= ",A
+    If A>G
+    Disp "LOWER
+    If A<G
+    Disp "HIGHER
+    If A=G
+    Then
+      I->B
+      10->I
+      Disp "CONGRADULATIONS
+      Disp "IT TOOK YOU",B,"GUESSES
+      Disp "PRESS ENTER...
+      Pause 
+      Goto P
+      1->K
+    End
+  End
+End
+Disp "YOU LOSE
+Disp "THE NUMBER WAS",G
+Pause 
+Goto P

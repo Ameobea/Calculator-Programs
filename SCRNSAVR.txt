@@ -1,0 +1,59 @@
+ClrDraw
+ClrHome
+Disp "SCREEN SAVERS
+Disp "CASEY PRIMOZIC
+Disp "PRESS ENTER...
+Pause 
+ClrHome
+Menu("","DOTS",1,"SPIDER",2,"NUMBERS",3,"ILLUSIONS",4,"TROLLS",5
+Lbl 4
+ZSquare
+ClrDraw
+AxesOff
+For(I,1,20
+  Circle(0,0,I
+End
+StorePic Pic1
+ClrDraw
+For(I,1,20
+  Circle(0,0,I-.5
+End
+StorePic Pic2
+ClrDraw
+While 1
+  RecallPic Pic1
+  sin(sin(sin(sin(sin(5->A
+  ClrDraw
+  RecallPic Pic2
+  sin(sin(sin(sin(sin(5797->A
+  ClrDraw
+End
+Lbl 3
+1->A
+While 1
+  A*1.01->A
+  Disp A
+End
+Lbl 2
+StoreGDB GDB2
+RecallGDB GDB1
+AxesOff
+ZSquare
+Circle(0,0,.5
+For(I,1,20
+  Circle(0,0,I
+  Circle(0,0,I+.5
+End
+Pt-On(0,0
+Pause 
+prgmTTTCLEAN
+RecallGDB GDB2
+DelVar GDB2
+Stop
+Lbl 1
+AxesOff
+Repeat 1!=1
+  randInt(1,62->B
+  randInt(1,94->C
+  Pxl-On(B,C
+End

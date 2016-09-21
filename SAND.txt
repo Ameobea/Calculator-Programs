@@ -1,0 +1,30 @@
+DispGraph
+ClrDraw
+RecallPic Pic1
+Horizontal ~9
+AxesOff
+Lbl 1
+1->Y
+30->X
+While 1
+  If not(pxl-Test(Y+1,X
+  Then
+    Pxl-Off(Y,X
+    Y+1->Y
+    Pxl-On(Y,X
+    Else
+    randInt(1,0->E
+    ~E+(E=0)->D
+    If pxl-Test(Y+1,X+D)
+    ~D->D
+    If pxl-Test(Y+1,X+D
+    Then
+      Goto 1
+    End
+    Pxl-Off(Y,X
+    Y+1->Y
+    X+D->X
+    Pxl-On(Y,X
+  End
+End
+End

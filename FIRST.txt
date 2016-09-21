@@ -1,0 +1,7 @@
+25->dim(|LO
+Fill(0,|LO
+startTmr->|LO(1
+500->|LO(3
+250->|LO(4
+75->|LO(5
+Archive |LO
